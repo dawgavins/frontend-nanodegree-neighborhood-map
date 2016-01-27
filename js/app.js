@@ -127,7 +127,7 @@ function viewModel() {
         in_location.visible = true;
 
         // set infoWindow data for each location
-        var l_infoHTML= getInfoWindowData(in_location);
+        var l_infoHTML= getInfoWindowHTML(in_location);
         in_location.infoHTML = l_infoHTML;
 
         //set click listener for each marker.
@@ -171,31 +171,52 @@ function viewModel() {
 
 
     //-------------------------------------------------------------------------------------------------------
-    // viewModel::getInfoWindowData
+    // viewModel::getInfoWindowHTML
     //-------------------------------------------------------------------------------------------------------
-    function getInfoWindowData(in_location) {
+    function getInfoWindowHTML(in_location) {
 
-        var infoHTML = "<div><p>A result</p></div>";
-        var clientID = 0;
-        var clientSecret = 0;
+        var infoHTML = "<div id='info_container'><p>A result</p></div>";
+        var clientID = "SHY4V10MBMNPBIFQPI4ZKWCQXD3QVNPYQ5SAFEDPPC5I4IE0";
+        var clientSecret = "PAUEFIUWGTXWKGPG42GIXMHJSXBZDLN1YKIKVTPIJYFUB55H";
         var foursquareURL = "https://api.foursquare.com/v2/venues/search?limit=1&ll=" + 
                             in_location.coords.lat + "," + 
                             in_location.coords.lng + 
+                            //"&intent=match" + // this returned no results....
+                            "&limit=1" +
+                            "&query=" + in_location.name +
                             "&client_id=" + clientID + 
                             "&client_secret="+ clientSecret + 
-                            "&v=20140806";
-                            
+                            "&v=20130815";
+
         $.getJSON(foursquareURL, 
             function(data){
+                console.log("Succesful json retrieved from foursquare");
+                console.log(data);
                 var result = data.response.venues[0];
-                infoHTML = "<div><p>" + result.name + "</p></div>";
+                infoHTML =  "<div id='info_container'>" +
+                                "<div id='info_title'>" + result.name + "</div>" +
+                                "<div id='info_address'>" + 
+                                    "<p>" +
+                                        result.location.formattedAddress[0] + "<br>" + 
+                                        result.location.formattedAddress[1] + 
+                                    "</p" +
+                                "</div>" +
+                                "<div id='info_contact'>" + 
+                                    "<p>" + 
+                                        "Website: <a href=" + result.url + ">" + result.url + "</a>" + "<br>" +
+                                        "Phone: " + result.contact.formattedPhone + "<br>" +
+                                        "Twitter: <a href=" + result.contact.twitter + ">" + result.contact.twitter + "</a>" + 
+                                    "</p" +
+                                "</div>" +
+                            "</div>";
+                console.log(infoHTML);
+
+                in_location.infoHTML = infoHTML;
             }
-
         ).error(function(e){
-            // TODO - improve error handling...
-            infoHTML = "<div><p>Error loading foursquare data</p></div>";
+            // TODO - improve error handling?...
+            in_location.infoHTML = "<div id='info_container'><p>Error loading foursquare data</p></div>";
         });
-
 
         return infoHTML;
     }

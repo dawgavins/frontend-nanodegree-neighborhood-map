@@ -4,19 +4,8 @@
 	font: normal 16px/2 Kalimati, Verdana, sans-serif;
 }
 
-
 html, body {
   height: 100%;
-}
-/*
-div {
-  margin-left: 0px;
-  margin-right: 0px;	
-}*/
-
-.row {
-  margin-left: 0px;
-  margin-right: 0px;		
 }
 
 .container-fluid {
@@ -27,9 +16,10 @@ div {
 	background-color: black;	
 }
 
-#sidebar-container {
-/*	padding-right: 0px;
-*/}
+.row {
+  margin-left: 0px;
+  margin-right: 0px;		
+}
 
 #sidebar-header {
 	margin-top: 0px;
@@ -39,6 +29,14 @@ div {
 	padding-left: 5px;
 	font-size: 20px;
 	color: #8888FF;
+}
+
+#input-filter {
+	width: 100%;
+}
+
+.list-group {
+	margin-top: 10px;
 }
 
 #map-outer-container {
@@ -52,10 +50,23 @@ div {
   width: 100%;
 }
 
-#input-filter {
-	/*border-right: 0px;*/
-	width: 100%;
+#info_container {
+	color: black;
 }
+
+#info_title {
+	font: bold 16px/2 Kalimati, Verdana, sans-serif;
+	color: black;
+}
+
+#info_address {
+	font: normal 10px Kalimati, Verdana, sans-serif;
+	line-height: 1;
+	margin-top: 0px;
+	margin-bottom:  0px;
+	color: black;
+}
+
 
 /*******************************************************************/
 /* debug box outlines */
