@@ -132,24 +132,37 @@ function viewModel() {
 
         //set click listener for each marker.
         in_location.marker.addListener('click', function() {
-                        // set the infoWindow's content to the current location's infoHTML
-                        self.infoWindow.setContent(in_location.infoHTML);
-                        // show the infoWindow
-                        self.infoWindow.open(g_map, in_location.marker);
+            // set the infoWindow's content to the current location's infoHTML
+            self.infoWindow.setContent(in_location.infoHTML);
+            // show the infoWindow
+            self.infoWindow.open(g_map, in_location.marker);
+            // animate the associated marker
+            in_location.marker.setAnimation(google.maps.Animation.BOUNCE);
+            window.setTimeout(function() {
+                in_location.marker.setAnimation(null);
+            }, 2000);
         });
 
         self.locationsList.push(new locationObj(in_location) );
     });
 
+
     //-------------------------------------------------------------
-    // viewModel::activateMarker - When a location in the list is clicked, activate the marker and open the infowindow
+    // viewModel::selectLocation - When a location in the list is clicked, activate the marker and open the infowindow
     //-------------------------------------------------------------
-    self.activateMarker = function(in_location) {
-        // animate the associated marker
-        in_location.marker.setAnimation(google.maps.Animation.DROP);
+    self.selectLocation = function(in_location) {
         // simulate a click on the associated marker, to trigger the opening of the infoWindow for the location
         google.maps.event.trigger(in_location.marker, 'click');
     }
+
+    //-------------------------------------------------------------
+    // viewModel::activateMarker - When a location in the list is clicked, activate the marker and open the infowindow
+    //-------------------------------------------------------------
+    // self.activateMarker = function(in_location) {
+
+    //     // simulate a click on the associated marker, to trigger the opening of the infoWindow for the location
+    //     google.maps.event.trigger(in_location.marker, 'click');
+    // }
 
     //-------------------------------------------------------------
     // viewModel::doLocationFilter
