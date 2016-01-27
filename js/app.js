@@ -205,7 +205,7 @@ function viewModel() {
                                     "<p>" + 
                                         "Website: <a href=" + result.url + ">" + result.url + "</a>" + "<br>" +
                                         "Phone: " + result.contact.formattedPhone + "<br>" +
-                                        "Twitter: <a href=" + result.contact.twitter + ">" + result.contact.twitter + "</a>" + 
+                                        "Twitter: <a href=https://twitter.com/" + result.contact.twitter + ">" + result.contact.twitter + "</a>" + 
                                     "</p" +
                                 "</div>" +
                             "</div>";
