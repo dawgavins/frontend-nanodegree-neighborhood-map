@@ -52,19 +52,16 @@ html, body {
 
 #info_container {
 	color: black;
+	font: normal 10px Kalimati, Verdana, sans-serif;
+	line-height: 1;
 }
 
 #info_title {
 	font: bold 16px/2 Kalimati, Verdana, sans-serif;
-	color: black;
 }
 
 #info_address {
-	font: normal 10px Kalimati, Verdana, sans-serif;
-	line-height: 0.5;
-	margin-top: 0px;
-	margin-bottom:  0px;
-	color: black;
+	line-height: 1;	
 }
 
 
