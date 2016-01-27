@@ -55,8 +55,8 @@ function googleMapError() {
 
 var mapOptions =
 {
-    center: {lat: 49.2707766, lng: -123.0915908},
-    zoom: 13,
+    center: {lat: 49.2707766, lng: -123.0815908},
+    zoom: 14,
     disableDefaultUI: true
 };
 
@@ -69,6 +69,22 @@ var locationData = [
         name: 'Main Street Brewing',
         coords: {lat: 49.264679, lng: -123.099172}
     },
+    {
+        name: 'Brassneck Brewing',
+        coords: {lat: 49.265804, lng: -123.100576}
+    },
+    {
+        name: '33 Acres Brewing',
+        coords: {lat: 49.263887, lng: -123.105323}
+    },
+    {
+        name: 'Strange Fellows Brewing',
+        coords: {lat: 49.272531, lng: -123.077433}
+    },
+    {
+        name: 'Parallel 49 Brewing',
+        coords: {lat: 49.283852, lng: -123.064364}
+    }
 ];
 // end model section
 //-------------------------------------------------------------------------------------------------------
