@@ -1,7 +1,7 @@
 //*******************************************************************************************************
 // app.js
 //
-// Neighbour Map Project
+// Neighbourhood Map Project
 // Udacity Front End Nanodegree Project 5
 // Erik Benediktson
 //*******************************************************************************************************
@@ -56,7 +56,7 @@ function googleMapError() {
 var mapOptions =
 {
     center: {lat: 49.2707766, lng: -123.0815908},
-    zoom: 14,
+    zoom: 13,
     disableDefaultUI: true
 };
 
@@ -166,19 +166,10 @@ function viewModel() {
     //-------------------------------------------------------------
     // viewModel::selectLocation - When a location in the list is clicked, activate the marker and open the infowindow
     //-------------------------------------------------------------
-    self.selectLocation = function(in_location) {
+    self.selectListLocation = function(in_location) {
         // simulate a click on the associated marker, to trigger the opening of the infoWindow for the location
         google.maps.event.trigger(in_location.marker, 'click');
     }
-
-    //-------------------------------------------------------------
-    // viewModel::activateMarker - When a location in the list is clicked, activate the marker and open the infowindow
-    //-------------------------------------------------------------
-    // self.activateMarker = function(in_location) {
-
-    //     // simulate a click on the associated marker, to trigger the opening of the infoWindow for the location
-    //     google.maps.event.trigger(in_location.marker, 'click');
-    // }
 
     //-------------------------------------------------------------
     // viewModel::doLocationFilter

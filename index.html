@@ -18,7 +18,7 @@
                         		data-bind="textInput: inputFilter, event: {keyup: doLocationFilter}" id="input-filter">
 					</div>
                     <ul class="list-group" data-bind="foreach: { data: locationsList, as: 'location' }">
-                        <li class="list-group-item" data-bind="text: location.name, click: $parent.activateMarker, visible: location.visible"</li>
+                        <li class="list-group-item" data-bind="text: location.name, click: $parent.selectListLocation, visible: location.visible"</li>
                     </ul>
                 </div>
 				<div class="col-md-8" id="map-outer-container">
