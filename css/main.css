@@ -61,7 +61,7 @@ html, body {
 
 #info_address {
 	font: normal 10px Kalimati, Verdana, sans-serif;
-	line-height: 1;
+	line-height: 0.5;
 	margin-top: 0px;
 	margin-bottom:  0px;
 	color: black;
