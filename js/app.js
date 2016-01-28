@@ -25,7 +25,7 @@ var g_map = null;
 //-------------------------------------------------------------------------------------------------------
 
 function googleMapSuccess() {
-    g_map = new google.maps.Map(document.getElementById('map-container'),mapOptions);
+    g_map = new google.maps.Map(document.getElementById('map_container'),mapOptions);
 
     // now that we know we have a map to work with, create the viewModel
     ko.applyBindings(new viewModel() );
@@ -91,7 +91,31 @@ var locationData = [
 //-------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------
 
+//-------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------
+// view
+//      some code for the functioning of the hamburger menu
+//-------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------
 
+$( ".cross" ).hide();
+$( ".menu" ).hide();
+
+$( ".hamburger" ).click(function() {
+    $( ".menu" ).slideToggle( "slow", function() {
+        $( ".hamburger" ).hide();
+        $( ".cross" ).show();
+    });
+});
+
+$( ".cross" ).click(function() {
+    $( ".menu" ).slideToggle( "slow", function() {
+        $( ".cross" ).hide();
+        $( ".hamburger" ).show();
+    });
+});
 
 //-------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------
@@ -169,6 +193,7 @@ function viewModel() {
     self.selectListLocation = function(in_location) {
         // simulate a click on the associated marker, to trigger the opening of the infoWindow for the location
         google.maps.event.trigger(in_location.marker, 'click');
+        $( ".cross" ).trigger('click');
     }
 
     //-------------------------------------------------------------

@@ -21,7 +21,11 @@ html, body {
   margin-right: 0px;		
 }
 
-#sidebar-header {
+#sidebar_container {
+	background-color: black;
+}
+
+#sidebar_header {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	padding-top: 10px;
@@ -31,7 +35,7 @@ html, body {
 	color: #8888FF;
 }
 
-#input-filter {
+#input_filter {
 	width: 100%;
 }
 
@@ -39,11 +43,11 @@ html, body {
 	margin-top: 10px;
 }
 
-#map-outer-container {
+#map_outer_container {
   padding: 0;	
 }
 
-#map-container {
+#map_container {
   display: block;
   padding: 0;
   height: 100vh;
@@ -64,6 +68,81 @@ html, body {
 	line-height: 1;	
 }
 
+/*******************************************************************/
+/* Hamburger menu */
+/*******************************************************************/
+
+header { 
+	width:100%; 
+	background:#101010; 
+	height:50px; 
+	line-height:50px;
+}
+
+.hamburger {
+	background:none;
+	position:absolute;
+	top:0;
+	left:0;
+	line-height:45px;
+	padding:0px 15px 0px 15px;
+	color:#fff;
+	border:0;
+	font-size:1.4em;
+	font-weight:bold;
+	cursor:pointer;
+	outline:none;
+	/*z-index:10000000000000;*/
+}
+
+.cross {
+	background:none;
+	position:absolute;
+	top:0px;
+	left:0;
+	padding:0px 15px 0px 15px;
+	color:#fff;
+	border:0;
+	font-size:3em;
+	line-height:65px;
+	font-weight:bold;
+	cursor:pointer;
+	outline:none;
+	/*z-index:10000000000000;*/
+}
+
+#menu_title {
+	background:none;
+	position:absolute;
+	top:0px;
+	left:40px;
+	padding:0px 15px 0px 15px;
+	border:0;
+	color: #8888FF;
+	font-size:1.2em;
+	line-height:50px;
+	font-weight:bold;
+	cursor:pointer;
+	outline:none;
+	/*z-index:10000000000000;*/
+	margin-bottom: 0;
+}
+.menu{z-index:1000000;}
+/*.menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:#131313;  position:absolute; text-align:center;}
+.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+.menu li {display: block;   padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
+.menu li:hover{display: block;    background:#181818; padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
+.menu ul li a { text-decoration:none;  margin: 0px; color:#fff;}
+.menu ul li a:hover {  color: #fff; text-decoration:none;}
+.menu a{text-decoration:none; color:white;}
+.menu a:hover{text-decoration:none; color:white;}
+*/
+/*.glyphicon-home{
+  color:white; 
+  font-size:1.5em; 
+  margin-top:5px; 
+  margin:0 auto;
+}*/
 
 /*******************************************************************/
 /* debug box outlines */
