@@ -241,10 +241,10 @@ function viewModel() {
                 infoHTML =  "<div id='info_container'>" +
                                 "<div id='info_title'>" + result.name + "</div>" +
                                 "<div id='info_address'>" + 
-                                    "<p>" +
+                                    //"<p>" +
                                         result.location.formattedAddress[0] + "<br>" + 
                                         result.location.formattedAddress[1] + 
-                                    "</p" +
+                                    //"</p" +
                                 "</div>" +
                                 "<div id='info_contact'>" + 
                                     "<p>" + 

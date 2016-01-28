@@ -65,7 +65,9 @@ html, body {
 }
 
 #info_address {
-	line-height: 1;	
+	color: black !important;
+	font: normal 10px Kalimati, Verdana, sans-serif !important;
+	line-height: 1 !important;	
 }
 
 /*******************************************************************/
