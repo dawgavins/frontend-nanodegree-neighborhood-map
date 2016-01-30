@@ -4,61 +4,57 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width initial-scale=1.0">
         <title>Breweries of East Vancouver</title>
+        <!-- this is the button for bringing up the hamburger menu -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
 
     </head>
 
     <!-- credit to Glenn Smith for this codepen on the hamburger menu: http://codepen.io/g13nn/pen/eHGEF -->
+    <!-- this is the title bar of the app -->
     <header>
-        <button class="hamburger">&#9776;</button>
-        <button class="cross">&#735;</button>
+        <!-- this is the button for bringing up the hamburger menu -->
+        <button class="hamburger-button">&#9776;</button>
+        <!-- experimented with using box shadows to create hamburger icon, but needs work, will fix later
+        <button class="hamburger-button"><div class="hamburger-icon"></div></button>-->
+        <!-- this is the button for closing the hamburger menu -->
+        <button class="cross-button">&#735;</button>
+        <!-- the main header text for the app -->
         <p id="menu_title">Breweries Of East Van</p> 
-
     </header>
 
-
-
     <body>
-
-<!--         <div class="container-fluid">
-            <div class="row">
- -->
-<!--                 <div class="col-md-4" id="sidebar-container">
-                    <p id="sidebar-header">Breweries Of East Van</p> 
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Filter locations..." 
-                                data-bind="textInput: inputFilter, event: {keyup: doLocationFilter}" id="input-filter">
-                    </div>
-                    <ul class="list-group" data-bind="foreach: { data: locationsList, as: 'location' }">
-                        <li class="list-group-item" data-bind="text: location.name, click: $parent.selectListLocation, visible: location.visible"</li>
-                    </ul>
-                </div>
- --> 
-<!--             <div class="col-md-12" id="map-outer-container">
- -->
-                 <div class="menu">
-                        <div id="sidebar_container">
-<!--                             <p id="sidebar_header">Breweries Of East Van</p> 
- -->                            
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Filter locations..." 
-                                        data-bind="textInput: inputFilter, event: {keyup: doLocationFilter}" id="input_filter">
-                            </div>
-                            <ul class="list-group" data-bind="foreach: { data: locationsList, as: 'location' }">
-                                <li class="list-group-item" data-bind="text: location.name, click: $parent.selectListLocation, visible: location.visible"</li>
-                            </ul>            
-                        </div>
-                    </div>                     
-                    <div id="map_container">
-                    </div>
-<!--                 </div>
+        <!-- the container for the drop down menu -->
+         <div class="menu">
+            <!-- using bootstrap input-group to contain the input filter -->
+            <div class="input-group">
+                <!-- the input filter control binding to the knockout observable inputFilter and triggering
+                doLocationFilter on any keypress -->
+                <input type="text" class="form-control" placeholder="Filter locations..." 
+                        data-bind="textInput: inputFilter, event: {keyup: doLocationFilter}" id="input_filter">
             </div>
+
+            <!-- the list-group containing the list of locations.  Bound to the knockout observable array locationsList -->
+            <ul class="list-group" data-bind="foreach: { data: locationsList, as: 'location' }">
+                <!--calls viewModel function selectListLocation on click, visibility determined by
+                .visible observable on each location element-->
+                <li class="list-group-item" data-bind="text: location.name, click: $parent.selectListLocation, visible: location.visible"</li>
+            </ul>            
+        </div>        
+        <!-- container for the map object -->             
+        <div id="map_container">
         </div>
- -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="js/app.js"></script>
+
+        <!-- TODO - load jQuery from a CDN for speed
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+
+        <!-- load jQuery -->
+        <script src='js/jQuery.js'></script>
+        <!-- knockout.js contains the knockout framework -->
         <script src='js/knockout.js'></script>
+        <!-- app.js is the main code file for the application.  Must load this before google maps script because it contains the global functions googleMapSuccess and googleMapError-->
+        <script src="js/app.js"></script>
+        <!-- load the google maps script -->
         <script async src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=googleMapSuccess" 
                 onerror="googleMapError()"></script>
     </body>
