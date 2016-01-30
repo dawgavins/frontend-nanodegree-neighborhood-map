@@ -5,7 +5,8 @@ Erik Benediktson
 
 ## Instructions
 
-To run, just open up index.html in any browser.
+To run, visit http://dawgavins.github.io/frontend-nanodegree-neighborhood-map/
+or download all files in the repository and open up index.html in any browser.
 
 ## References
 
